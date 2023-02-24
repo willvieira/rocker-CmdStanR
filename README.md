@@ -9,7 +9,7 @@ This image adds the Stan software along with the `cmdstanr`, `brms`, `tidybayes`
 This image can be built locally using:
 
 ```bash
-docker build -t rocker-cmstanr https://github.com/willvieira/rocker-cmdstanr
+docker build -t rocker-cmstanr https://github.com/willvieira/rocker-cmdstanr.git#main
 ```
 
 The "rocker-cmdstanr" image should appear in the list of local images if the installation was successful:
