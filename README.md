@@ -29,3 +29,4 @@ docker run --rm -ti -v $(pwd):/home/rstudio -e DISABLE_AUTH=true -p 127.0.0.1:87
 The running Rstudio enviroment will be available at the address [`localhost:8787`](http://localhost:8787/).
 
 Note that the flag `-v $(pwd):/home/rstudio` is required to sync the container with the local working directory.
+Also, if you are running on CMD windows, use `%cd%` instead of `$(pwd)`.
