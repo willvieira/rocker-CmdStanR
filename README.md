@@ -28,5 +28,15 @@ docker run --rm -ti -v $(pwd):/home/rstudio -e DISABLE_AUTH=true -p 127.0.0.1:87
 
 The running Rstudio enviroment will be available at the address [`localhost:8787`](http://localhost:8787/).
 
-Note that the flag `-v $(pwd):/home/rstudio` is required to sync the container with the local working directory.
+The flag `-v $(pwd):/home/rstudio` is defined to sync the local files from the working directory `$(pwd)` with the container.
 Also, if you are running on CMD windows, use `%cd%` instead of `$(pwd)`.
+
+You can avoid calling Rstudio and use R in the command line by specifying the endpoint `R` in the docker run command:
+
+```bash
+docker run --rm -ti -v $(pwd):/home/rstudio -e DISABLE_AUTH=true -p 127.0.0.1:8787:8787 rocker-cmdstanr R
+```
+
+Note that when using R in the command line, the working directory is set to the `root`, not to `/home/rstudio` where the files are synced.
+
+More details on how to run this image can be found in the [rocker documentation](https://rocker-project.org/images/).
