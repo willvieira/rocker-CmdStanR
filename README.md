@@ -34,7 +34,7 @@ Also, if you are running on CMD windows, use `%cd%` instead of `$(pwd)`.
 You can avoid calling Rstudio and use R in the command line by specifying the endpoint `R` in the docker run command:
 
 ```bash
-docker run --rm -ti -v $(pwd):/home/rstudio -e DISABLE_AUTH=true -p 127.0.0.1:8787:8787 rocker-cmdstanr R
+docker run --rm -ti -v $(pwd):/home/rstudio -e DISABLE_AUTH=true rocker-cmdstanr R
 ```
 
 Note that when using R in the command line, the working directory is set to the `root`, not to `/home/rstudio` where the files are synced.
